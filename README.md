@@ -1,6 +1,6 @@
 # OracleSteps portfolio
 
-Nuxt 3 / Vue 3 with SSR, Tailwind CSS, GSAP, Three.js and Lucide icons.
+Nuxt 3 / Vue 3 with SSR and Tailwind CSS. Lucide is used only for navigation controls.
 
 ## Local development
 
@@ -22,7 +22,7 @@ Nitro builds a Cloudflare module worker. `scripts/stage.mjs` stages the server a
 - Shared project data: `data/projects.ts`
 - Design tokens and responsive styles: `assets/css/main.css`
 - Homepage, work, and enquiry routes: `pages/`
-- Product dashboard illustrations: `components/ProjectVisual.vue`
+- Project screenshot component: `components/ProjectVisual.vue`
 
 ## Before public launch
 
@@ -32,4 +32,4 @@ Nitro builds a Cloudflare module worker. `scripts/stage.mjs` stages the server a
 - Budget options currently use USD and can be changed in `pages/contact.vue`.
 - Nuxt 3 was explicitly requested. Official Nuxt documentation states that it reached end of life on July 31, 2026. Plan a supported-version upgrade before a long-term public production launch.
 
-Motion respects reduced-motion preferences. The Three.js scene caps pixel ratio and frame rate, pauses offscreen, and disposes resources on unmount. Dashboard visuals are labelled illustrative.
+The layout follows the supplied Figma template with Sansation and Lato. Project cards use browser screenshots of the actual websites. See DESIGN-STATUS.md for image sources and outstanding content.

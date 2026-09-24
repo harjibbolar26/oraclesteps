@@ -7,8 +7,7 @@ useSeoMeta({ title: "Terms of Service | OracleSteps", robots: "noindex" });
     <h1>Website information</h1>
     <p>
       This portfolio presents OracleSteps’ engineering services and selected
-      work. Product visuals are illustrations, rather than screenshots of live
-      client systems.
+      work. External project links lead to the respective project websites.
     </p>
     <p>
       Project scope, pricing, delivery commitments, and service terms are agreed

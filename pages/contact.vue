@@ -65,16 +65,15 @@ watch(form, () => (reviewed.value = false));
         Let’s explore what we can build together.
       </p>
       <div class="contact-detail">
-        <Mail :size="22" />
+        
         <div>
           <span class="eyebrow">EMAIL US</span
           ><a href="mailto:contact@oraclesteps.com"
-            >contact@oraclesteps.com <ArrowUpRight :size="16"
-          /></a>
+            >contact@oraclesteps.com </a>
         </div>
       </div>
       <div class="contact-detail">
-        <Globe2 :size="22" />
+        
         <div>
           <span class="eyebrow">WHERE WE WORK</span>
           <p>Global operations.<br />Remote-first enterprise engineering.</p>
@@ -185,7 +184,7 @@ watch(form, () => (reviewed.value = false));
           </p>
         </div>
         <button class="button primary submit-button" type="submit">
-          Prepare enquiry <ArrowRight :size="18" />
+          Prepare enquiry 
         </button>
         <p class="form-disclaimer">
           Online submission is not connected yet. Prepare your enquiry, then
@@ -195,8 +194,7 @@ watch(form, () => (reviewed.value = false));
           <strong>Your enquiry is ready. Nothing has been sent.</strong>
           <p>Open your email app to review and send your project details.</p>
           <a :href="emailLink" class="text-link"
-            >Continue in email <ArrowUpRight :size="16"
-          /></a>
+            >Continue in email </a>
         </div>
       </form>
     </div>

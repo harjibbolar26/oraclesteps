@@ -53,7 +53,7 @@ const principles = [
       </div>
       <div class="principles">
         <article v-for="(p, i) in principles" :key="p.title">
-          <component :is="p.icon" :size="23" /><span class="mono"
+          <span class="mono"
             >0{{ i + 1 }}</span
           >
           <h3>{{ p.title }}</h3>
@@ -82,14 +82,13 @@ const principles = [
           <ProjectVisual :kind="project.id" />
           <div class="case-links">
             <a :href="project.url" target="_blank" rel="noopener noreferrer"
-              >Visit {{ project.short }} <ArrowUpRight :size="16" /></a
+              >Visit {{ project.short }} </a
             ><a
               v-if="project.extra"
               :href="project.extra"
               target="_blank"
               rel="noopener noreferrer"
-              >Tenant portal <ArrowUpRight :size="16"
-            /></a>
+              >Tenant portal </a>
           </div>
         </div>
         <div class="case-copy">
@@ -101,7 +100,7 @@ const principles = [
           <p>{{ project.description }}</p>
           <ul>
             <li v-for="feature in project.features" :key="feature">
-              <Check :size="16" /><span>{{ feature }}</span>
+              <span>{{ feature }}</span>
             </li>
           </ul>
           <span class="eyebrow">BUILT WITH</span>

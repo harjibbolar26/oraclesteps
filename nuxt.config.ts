@@ -6,6 +6,6 @@ export default defineNuxtConfig({
     { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
     { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
     { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
-    { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;450;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap' }
+    { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Sansation:wght@400;700&family=Lato:wght@400;700&display=swap' }
   ] } }
 })
