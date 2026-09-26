@@ -71,7 +71,7 @@ const principles = [
         class="case-study"
       >
         <div class="case-visual">
-          <ProjectVisual :kind="project.id" /><figure v-if="project.id === 'chisquares'" class="case-detail-image"><img src="/images/projects/chisquares-features.png" alt="ChiSquares survey builder and feature overview" width="1897" height="956" loading="lazy"><figcaption>Survey design on the ChiSquares platform.</figcaption></figure>
+          <ProjectVisual :kind="project.id" /><figure v-if="project.id === 'chisquares'" class="case-detail-image"><img src="/images/projects/chisquares-features.png" alt="Chisquares survey builder and feature overview" width="1897" height="956" loading="lazy"><figcaption>Survey design on the Chisquares platform.</figcaption></figure>
           <p class="case-audience"><span class="eyebrow">WHO IT SERVES</span>{{ project.audience }}</p><div class="case-links">
             <a :href="project.url" target="_blank" rel="noopener noreferrer"
               >Visit {{ project.short }} </a

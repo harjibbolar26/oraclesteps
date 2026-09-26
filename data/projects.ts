@@ -60,12 +60,12 @@ export const projects = [
   {
     "id": "chisquares",
     "number": "04",
-    "name": "ChiSquares",
-    "short": "ChiSquares",
+    "name": "Chisquares",
+    "short": "Chisquares",
     "category": "RESEARCH & DATA ANALYSIS",
     "headline": "Supporting the research journey from study design to manuscript.",
     "description": "An integrated research platform for survey design, data collection, statistical analysis and collaborative manuscript writing.",
-    "context": "Research often involves moving between separate tools. ChiSquares brings study planning, data collection, analysis and writing into a shared workflow for researchers and their collaborators.",
+    "context": "Research often involves moving between separate tools. Chisquares brings study planning, data collection, analysis and writing into a shared workflow for researchers and their collaborators.",
     "features": [
       "Survey design with varied question formats, custom themes and advanced logic.",
       "Study planning with sample-size calculations and sampling methods.",
