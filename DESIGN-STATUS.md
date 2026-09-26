@@ -15,3 +15,5 @@ Project cards and case studies use real browser captures taken on September 24, 
 The tenant portal https://lamatatenant.com returned ERR_NAME_NOT_RESOLVED. Its provided link is retained, and the LAMATA case study uses the main website capture.
 
 No generated project imagery is used. The template hero photo can be replaced when the owner supplies an OracleSteps team or workspace photograph.
+
+September 26 refinement: full-width footer, split closing CTA, telephone and WhatsApp links, reduced-motion-aware card hover animation, stack-independent positioning, and expanded platform descriptions. Public capabilities researched from the project homepages and https://www.chisquares.com/product/features; tenant functionality remains based on the supplied business brief. No new delivery metrics or engineering ownership claims inferred from public sites.

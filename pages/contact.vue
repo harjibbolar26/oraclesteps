@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ArrowUpRight, Mail, Globe2, ArrowRight } from "lucide-vue-next";
 useSeoMeta({
   title: "Contact Us | OracleSteps",
   ogTitle: "Get in Touch | OracleSteps",
@@ -65,7 +64,7 @@ watch(form, () => (reviewed.value = false));
         Let’s explore what we can build together.
       </p>
       <div class="contact-detail">
-        
+
         <div>
           <span class="eyebrow">EMAIL US</span
           ><a href="mailto:contact@oraclesteps.com"
@@ -73,12 +72,13 @@ watch(form, () => (reviewed.value = false));
         </div>
       </div>
       <div class="contact-detail">
-        
+
         <div>
           <span class="eyebrow">WHERE WE WORK</span>
           <p>Global operations.<br />Remote-first enterprise engineering.</p>
         </div>
       </div>
+      <div class="contact-detail"><span class="eyebrow">CALL OR WHATSAPP</span><a href="tel:+2348105986225">+234 810 598 6225</a><a href="https://wa.me/2348105986225" target="_blank" rel="noopener noreferrer">Start a WhatsApp conversation</a></div>
       <div class="contact-note">
         <span class="mono">01 / SHARE YOUR VISION</span
         ><span class="mono">02 / EXPLORE THE POSSIBILITIES</span
@@ -107,7 +107,7 @@ watch(form, () => (reviewed.value = false));
             </p>
           </div>
           <div class="field">
-            <label for="email">Enterprise email <span>*</span></label
+            <label for="email">Email address <span>*</span></label
             ><input
               id="email"
               v-model="form.email"
@@ -184,14 +184,13 @@ watch(form, () => (reviewed.value = false));
           </p>
         </div>
         <button class="button primary submit-button" type="submit">
-          Prepare enquiry 
+          Prepare enquiry
         </button>
         <p class="form-disclaimer">
-          Online submission is not connected yet. Prepare your enquiry, then
-          send it through your email app.
+          Review your project details, then send them to contact@oraclesteps.com using your email app.
         </p>
         <div v-if="reviewed" class="form-status" role="status">
-          <strong>Your enquiry is ready. Nothing has been sent.</strong>
+          <strong>Your enquiry is ready to review.</strong>
           <p>Open your email app to review and send your project details.</p>
           <a :href="emailLink" class="text-link"
             >Continue in email </a>

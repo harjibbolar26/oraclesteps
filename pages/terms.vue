@@ -15,7 +15,7 @@ useSeoMeta({ title: "Terms of Service | OracleSteps", robots: "noindex" });
       service agreement.
     </p>
     <p>
-      Formal terms of service are being prepared. For questions, contact
+      For questions about our services or this website, contact
       <a href="mailto:contact@oraclesteps.com">contact@oraclesteps.com</a>.
     </p>
   </section>

@@ -1,11 +1,4 @@
 <script setup lang="ts">
-import {
-  ArrowUpRight,
-  Check,
-  ShieldCheck,
-  Layers3,
-  Activity,
-} from "lucide-vue-next";
 import { projects } from "~/data/projects";
 useSeoMeta({
   title: "Our Work & Impact | OracleSteps",
@@ -15,17 +8,17 @@ useSeoMeta({
 });
 const principles = [
   {
-    icon: Activity,
+
     title: "Zero-downtime reliability",
     text: "Engineered for maximum operational uptime.",
   },
   {
-    icon: Layers3,
+
     title: "Modular scalability",
     text: "Clean microservices and modular frontend structures.",
   },
   {
-    icon: ShieldCheck,
+
     title: "Security first",
     text: "Built-in compliance and encryption protocols from day one.",
   },
@@ -47,8 +40,7 @@ const principles = [
           problems require refined, scalable engineering. We operate at the
           intersection of enterprise architecture, modern web frameworks, and
           artificial intelligence. From modernizing metropolitan transit portals
-          to protecting financial ecosystems with artificial intelligence, our
-          engineered solutions handle millions in traffic and revenue.
+          to protecting financial ecosystems with artificial intelligence, we help organisations turn demanding workflows into clear, usable digital experiences.
         </p>
       </div>
       <div class="principles">
@@ -79,8 +71,8 @@ const principles = [
         class="case-study"
       >
         <div class="case-visual">
-          <ProjectVisual :kind="project.id" />
-          <div class="case-links">
+          <ProjectVisual :kind="project.id" /><figure v-if="project.id === 'chisquares'" class="case-detail-image"><img src="/images/projects/chisquares-features.png" alt="ChiSquares survey builder and feature overview" width="1897" height="956" loading="lazy"><figcaption>Survey design on the ChiSquares platform.</figcaption></figure>
+          <p class="case-audience"><span class="eyebrow">WHO IT SERVES</span>{{ project.audience }}</p><div class="case-links">
             <a :href="project.url" target="_blank" rel="noopener noreferrer"
               >Visit {{ project.short }} </a
             ><a
@@ -97,19 +89,17 @@ const principles = [
           >
           <h2>{{ project.name }}</h2>
           <h3>{{ project.headline }}</h3>
-          <p>{{ project.description }}</p>
+          <p>{{ project.description }}</p><p class="case-context">{{ project.context }}</p><h4 class="eyebrow case-label">Platform capabilities</h4>
           <ul>
             <li v-for="feature in project.features" :key="feature">
               <span>{{ feature }}</span>
             </li>
           </ul>
-          <span class="eyebrow">BUILT WITH</span>
-          <div class="tags">
-            <span v-for="tag in project.stack" :key="tag">{{ tag }}</span>
-          </div>
+          <div class="case-value"><span class="eyebrow">WHY IT MATTERS</span><p>{{ project.value }}</p></div>
         </div>
       </article>
     </section>
+    <StackApproach />
     <ContactBanner />
   </div>
 </template>
