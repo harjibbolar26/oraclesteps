@@ -5,3 +5,6 @@ dist
 .env
 *.log
 .nuxt-build
+
+.env.*
+!.env.example

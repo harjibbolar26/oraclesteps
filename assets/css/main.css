@@ -14,3 +14,11 @@
 @media(prefers-reduced-motion:reduce){.project-card,.project-visual img{transition:none!important;transform:none!important}}
 
 .case-detail-image{margin:22px 0 0}.case-detail-image img{width:100%;height:auto;display:block;border:1px solid #eee}.case-detail-image figcaption{font-size:12px;color:#777;margin-top:8px}
+
+.enquiry-fields{border:0;padding:0;margin:0;min-width:0}.enquiry-trap{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}.submit-button:disabled{opacity:.65;cursor:wait}
+
+.enquiry-message{margin:0 0 26px;font-weight:700;line-height:1.6}
+.enquiry-message p{color:inherit;font-weight:inherit}
+.enquiry-message p+p{margin-top:6px}
+.enquiry-message--success{color:#15803d}
+.enquiry-message--error{color:#b91c1c}

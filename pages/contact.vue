@@ -11,8 +11,17 @@ const form = reactive({
   category: "",
   budget: "",
   description: "",
+  website: "",
 });
-const reviewed = ref(false);
+const sending = ref(false);
+const sent = ref(false);
+const sendError = ref("");
+const feedback = ref<HTMLElement | null>(null);
+watch([sent, sendError], async () => {
+  if (!sent.value && !sendError.value) return;
+  await nextTick();
+  feedback.value?.scrollIntoView({ block: "center", behavior: "instant" });
+});
 const errors = reactive<Record<string, string>>({});
 const categories = [
   "Fintech",
@@ -38,17 +47,32 @@ function validate() {
   if (form.description.trim().length < 20)
     errors.description =
       "Please share at least 20 characters about your project.";
-  reviewed.value = Object.keys(errors).length === 0;
-  if (!reviewed.value)
+  const valid = Object.keys(errors).length === 0;
+  if (!valid)
     nextTick(() =>
       document.querySelector<HTMLElement>('[aria-invalid="true"]')?.focus(),
     );
+  return valid;
 }
-const emailLink = computed(
-  () =>
-    `mailto:contact@oraclesteps.com?subject=${encodeURIComponent("Project enquiry: " + form.category)}&body=${encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\nCategory: ${form.category}\nBudget: ${form.budget}\n\n${form.description}`)}`,
-);
-watch(form, () => (reviewed.value = false));
+async function submitEnquiry() {
+  if (sending.value) return;
+  sent.value = false;
+  sendError.value = "";
+  if (!validate()) return;
+  sending.value = true;
+  try {
+    const response = await $fetch<{ success: boolean }>("/api/contact", { method: "POST", body: { ...form } });
+    if (!response.success) throw new Error("Not accepted");
+    Object.assign(form, { name: "", email: "", category: "", budget: "", description: "", website: "" });
+    sent.value = true;
+  } catch (error: any) {
+    sendError.value = error?.statusCode === 429
+      ? "Too many enquiries. Please wait a few minutes before trying again."
+      : "We couldn’t confirm your enquiry was sent. Please try again later or email contact@oraclesteps.com.";
+  } finally {
+    sending.value = false;
+  }
+}
 </script>
 <template>
   <section class="container contact-page">
@@ -88,7 +112,16 @@ watch(form, () => (reviewed.value = false));
     <div class="form-panel">
       <span class="eyebrow">PROJECT ENQUIRY</span>
       <h2>Let’s build your next<br />digital system.</h2>
-      <form novalidate @submit.prevent="validate">
+      <div ref="feedback" class="enquiry-feedback">
+        <div v-if="sent" class="enquiry-message enquiry-message--success" role="status">
+          <p>Thank you. Your enquiry has been sent.</p>
+          <p>Our team will reply to the email address you provided.</p>
+        </div>
+        <p v-if="sendError" class="enquiry-message enquiry-message--error" role="alert">{{ sendError }}</p>
+      </div>
+      <form novalidate @submit.prevent="submitEnquiry" :aria-busy="sending">
+        <div class="enquiry-trap" aria-hidden="true"><label for="website">Leave this field empty</label><input id="website" v-model="form.website" tabindex="-1" autocomplete="off"></div>
+        <fieldset :disabled="sending" class="enquiry-fields">
         <div class="form-row">
           <div class="field">
             <label for="name">Full name <span>*</span></label
@@ -183,18 +216,11 @@ watch(form, () => (reviewed.value = false));
             {{ errors.description }}
           </p>
         </div>
-        <button class="button primary submit-button" type="submit">
-          Prepare enquiry
+        <button class="button primary submit-button" type="submit" :disabled="sending">
+          {{ sending ? 'Sending…' : 'Send enquiry' }}
         </button>
-        <p class="form-disclaimer">
-          Review your project details, then send them to contact@oraclesteps.com using your email app.
-        </p>
-        <div v-if="reviewed" class="form-status" role="status">
-          <strong>Your enquiry is ready to review.</strong>
-          <p>Open your email app to review and send your project details.</p>
-          <a :href="emailLink" class="text-link"
-            >Continue in email </a>
-        </div>
+        </fieldset>
+        <p class="form-disclaimer">Your enquiry goes directly to our team at contact@oraclesteps.com.</p>
       </form>
     </div>
   </section>

@@ -3,6 +3,13 @@ export default defineNuxtConfig({
 
   ssr: true,
 
+  runtimeConfig: {
+    smtpHost: '',
+    smtpPort: 465,
+    smtpUser: 'contact@oraclesteps.com',
+    smtpPassword: '',
+  },
+
   buildDir:
     process.env.NODE_ENV === 'production'
       ? '.nuxt-build'
